@@ -29,6 +29,10 @@ dependencies {
     //swagger
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
+    //mapstruct
+    compile 'org.mapstruct:mapstruct:1.4.1.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
 }
 
 test {
