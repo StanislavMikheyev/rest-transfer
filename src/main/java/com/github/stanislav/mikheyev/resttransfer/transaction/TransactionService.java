@@ -83,4 +83,11 @@ public class TransactionService {
     private boolean negativeOrZero(BigDecimal amount) {
         return amount.compareTo(BigDecimal.ZERO) <= 0;
     }
+
+    public Iterable<TransactionDto> getTransactionsForAccount(Integer accountId) {
+        Account account = accountRepository.findById(accountId).orElseThrow(AccountNotFoundException::new);
+        return transactionMapper.entityToDto(
+                transactionRepository.findTransactionWithAccount(account)
+        );
+    }
 }
